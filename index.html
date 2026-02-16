@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ONNX: Cerebro Universal para Robótica</title>
+    <style>
+        /* Variables de Tema Cyberpunk Limpio */
+        :root {
+            --bg-dark: #0b0f19;
+            --bg-card: #151b2b;
+            --neon-cyan: #00f0ff;
+            --neon-purple: #8a2be2;
+            --text-main: #e2e8f0;
+            --text-muted: #94a3b8;
+            --font-main: 'Segoe UI', system-ui, -apple-system, sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            font-family: var(--font-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Tipografía y Encabezados */
+        h1, h2, h3 {
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .highlight-cyan { color: var(--neon-cyan); }
+        .highlight-purple { color: var(--neon-purple); }
+        
+        /* Contenedor Principal */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        /* Header / Hero Section */
+        header {
+            text-align: center;
+            padding: 6rem 2rem 4rem;
+            border-bottom: 1px solid rgba(0, 240, 255, 0.2);
+            background: radial-gradient(circle at top, #151b2b 0%, #0b0f19 70%);
+        }
+
+        header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 0 20px rgba(0, 240, 255, 0.5);
+        }
+
+        header p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Secciones de la Infografía */
+        .section-block {
+            margin: 6rem 0;
+            display: flex;
+            align-items: center;
+            gap: 4rem;
+        }
+
+        .section-block.reverse {
+            flex-direction: row-reverse;
+        }
+
+        .content-box {
+            flex: 1;
+        }
+
+        .content-box h2 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            line-height: 1.1;
+        }
+
+        .content-box h3 {
+            font-size: 1.2rem;
+            color: var(--neon-purple);
+            margin-bottom: 2rem;
+        }
+
+        /* Tarjetas de Datos */
+        .data-grid {
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        .data-card {
+            background: var(--bg-card);
+            padding: 1.5rem;
+            border-left: 4px solid var(--neon-cyan);
+            border-radius: 0 8px 8px 0;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .data-card:hover {
+            transform: translateX(10px);
+            box-shadow: -5px 0 20px rgba(0, 240, 255, 0.2);
+        }
+
+        .data-card strong {
+            display: block;
+            color: var(--neon-cyan);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        #bloque-rendimiento , #digital-twin{
+            max-height: 320px;
+        }
+        /* Elementos Visuales Simulados (Para el equipo de diseño) */
+        .visual-placeholder {
+            flex: 1;
+            height: 400px;
+            background: linear-gradient(45deg, #111827 0%, #1f2937 100%);
+            border: 1px solid rgba(0, 240, 255, 0.3);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-muted);
+            font-style: italic;
+            box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.5), 0 0 30px rgba(0, 240, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Efecto de escaneo sobre los visuales */
+        .visual-placeholder::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(to bottom, transparent, rgba(0, 240, 255, 0.05), transparent);
+            transform: rotate(30deg);
+            animation: scan 6s linear infinite;
+        }
+
+        @keyframes scan {
+            0% { transform: translateY(-100%) rotate(30deg); }
+            100% { transform: translateY(100%) rotate(30deg); }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .section-block, .section-block.reverse {
+                flex-direction: column;
+                gap: 2rem;
+            }
+            header h1 { font-size: 2.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>ONNX <span class="highlight-cyan">Open Neural Network Exchange</span></h1>
+        <p>Formato de <span class="highlight-cyan" >código abierto</span> para representar <span class="highlight-purple" >modelos de machine learning y deep learning de manera estandarizada,</span> que permite la Interoperabilidad entre diferentes frameworks de inteligencia artificial, como PyTorch, TensorFlow, scikit-learn, Caffe2 y otros con aplicaiones en Robótica y Digital Twins</p>
+    </header>
+
+    <div class="container">
+        
+        <section class="section-block">
+            <div class="content-box">
+                <h2>ONNX: Tu pasaporte universal al futuro de la IA</h2>
+                <h3>No programes robots. <span class="highlight-cyan">Crea sus cerebros.</span></h3>
+                
+                <div class="data-grid">
+                    <div class="data-card">
+                        <strong>Libertad Total</strong>
+                        Entrena tu red neuronal en tu framework favorito (PyTorch, TensorFlow).
+                    </div>
+                    <div class="data-card">
+                        <strong>Despliegue Universal</strong>
+                        Inyecta ese mismo modelo en cualquier hardware sin reescribir una sola línea de código.
+                    </div>
+                    <div class="data-card">
+                        <strong>Tu Ventaja Competitiva</strong>
+                        Certifícate en el estándar open-source que exigen los gigantes de la industria.
+                    </div>
+                </div>
+            </div>
+            <div class="visual-placeholder">
+                <img src="./img/mini_Bloque_de_Interoperabilidad-ONNX.png"/>
+            </div>
+        </section>
+
+        <section class="section-block reverse">
+            <div class="content-box">
+                <h2>De la simulación al metal <span class="highlight-cyan">en un clic.</span></h2>
+                <h3>Cerrando la brecha entre el Gemelo Digital y la Realidad</h3>
+                
+                <div class="data-grid">
+                    <div class="data-card">
+                        <strong>Sincronización Perfecta</strong>
+                        El archivo .onnx que pruebas en tu entorno virtual es exactamente el que gobierna al robot físico.
+                    </div>
+                    <div class="data-card">
+                        <strong>Menos Fricción</strong>
+                        Reduce la discrepancia "Sim-to-Real" en un 40%. Lo que ves es lo que obtienes.
+                    </div>
+                    <div class="data-card">
+                        <strong>Iteración Rápida</strong>
+                        Falla en la simulación, triunfa en el mundo real. Despliega actualizaciones de IA en segundos.
+                    </div>
+                </div>
+            </div>
+            <div class="visual-placeholder">
+                <img id="digital-twin" src="./img/holograma_3d_digital_twin.png"/>
+            </div>
+        </section>
+
+        <section class="section-block">
+            <div class="content-box">
+                <h2>Latencia Cero <span class="highlight-cyan">en el "Edge".</span></h2>
+                <h3>En robótica, un milisegundo es la diferencia entre el éxito y el impacto</h3>
+                
+                <div class="data-grid">
+                    <div class="data-card">
+                        <strong>Aceleración Extrema</strong>
+                        Logra inferencias hasta 14x más rápidas utilizando la optimización de ONNX Runtime.
+                    </div>
+                    <div class="data-card">
+                        <strong>Eficiencia Quirúrgica</strong>
+                        Modelos optimizados que corren en placas de bajo costo y microcontroladores sin agotar la batería.
+                    </div>
+                    <div class="data-card">
+                        <strong>Hardware Agnóstico</strong>
+                        Exprime el 100% del rendimiento, ya sea en arquitecturas ARM, chips de NVIDIA o procesadores Intel.
+                    </div>
+                </div>
+            </div>
+            <div class="visual-placeholder">
+                <img id="bloque-rendimiento" src="./img/Bloque_de_Rendimiento_ONNX.png"/>
+            </div>
+        </section>
+
+    </div>
+
+</body>
+</html>
